@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post">
+        <p>Voulez-vous vraiment supprimer <strong>{{ todo.nom }} ?</strong></p>
+        <input type="submit" value="Confimer">
+    </form>
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="container">
+    <h2>My To Do List</h2>
+
+    <div class="search">
+      <input type="search" name="" placeholder="Chercher Votre Tache....">
+    </div>
+
+    <div class="forms">
+      <form action="" method="post" class="Form-todo">
+        {% csrf_token %}
+        <p>{{ form }}</p>
+        <button type="submit">Ajouter</button>
+      </form>
+    </div><br><br>
+
+    <div class="table">
+      <table border="1">
+        <tr>
+          <th>#</th>
+          <th>Tache</th>
+          <th>Actions</th>
+        </tr>
+        
+        {% for todo_list in todo_lists %}  
+          <tr>
+            <td>{{ todo_list.id }}</td>
+            <td>{{ todo_list.nom }}</td>
+            <td>
+              <a href="{% url 'update' todo_list.id %}">Modifier</a>
+              <a href="">Modifier</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    
+  </div>
+
+{% endblock content %}

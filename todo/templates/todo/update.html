@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="forms">
+        <form action="" method="post" class="Form-todo">
+            {% csrf_token %}
+            <p>{{ form.nom }}</p>
+            <button type="submit">Modifier</button>
+        </form>
+     </div>
+{% endblock content %}
